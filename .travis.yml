@@ -8,4 +8,5 @@ before_install:
   - docker build -t liuminwjh/Docker -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true liuminwjh/Docker npm run test -- -- coverage
+  - docker run -e CI=true -v $PWD:/app -w /app liuminwjh/Docker sh -c "npm install && npm run test --coverage"
+
