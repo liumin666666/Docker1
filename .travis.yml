@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t liuminwjh/Docker -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true liuminwjh/Docker npm run test -- -- coverage
