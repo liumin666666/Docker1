@@ -6,7 +6,7 @@ services:
 before_install:
   - docker-compose up -d
 script:
-  - docker exec -e CI=true frontend-tests-1 npm run test -- --coverage
+  - docker exec -e CI=true liuminwjh/frontend-test npm run test -- --coverage
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
