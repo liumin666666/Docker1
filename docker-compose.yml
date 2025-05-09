@@ -9,6 +9,7 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
+    image: liuminwjh/frontend-web 
   tests:
     stdin_open: true
     build:
@@ -17,4 +18,5 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
+    image: liuminwjh/frontend-test 
     command: ["npm", "run", "test"]
