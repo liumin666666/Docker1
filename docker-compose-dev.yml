@@ -9,14 +9,11 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-    image: liuminwjh/frontend-web 
   tests:
-    stdin_open: true
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
       - /app/node_modules
       - .:/app
-    image: liuminwjh/frontend-test 
     command: ["npm", "run", "test"]
