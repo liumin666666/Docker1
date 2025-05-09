@@ -7,15 +7,5 @@ before_install:
   - docker-compose -f docker-compose-dev.yml up
 script:
   - docker run --rm -e CI=true liuminwjh/frontend-test npm run test -- --coverage
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-2"
-#   app: "frontend "
-#   env: "Frontend-env"
-#   bucket_name: "elasticbeanstalk-us-east-2-010222938598"
-#   bucket_path: "frontend"
-#   on:
-#     branch: main
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+
 
